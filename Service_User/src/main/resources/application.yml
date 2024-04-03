@@ -1,0 +1,15 @@
+resilience4j:
+  retry:
+    instances:
+      retryApi:
+        max-attempts: 5
+        wait-duration: 5s
+        retryExceptions:
+          - org.springframework.web.client.HttpClientErrorException
+    metrics:
+      legacy:
+        enabled: true
+      enabled: true
+
+server:
+  port: 8090
